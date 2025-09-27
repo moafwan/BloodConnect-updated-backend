@@ -1,0 +1,12 @@
+Dear {{ donor.full_name }},
+
+Thank you for your willingness to help! The blood donation request has been fulfilled by another donor.
+
+We truly appreciate your generosity and willingness to save lives. Your commitment to helping others is invaluable.
+
+Please continue to be available for future requests. Your contribution can make a difference when someone else needs help.
+
+Thank you for your cooperation!
+
+Best regards,
+Blood Donation Management System

@@ -1,0 +1,10 @@
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+python-dotenv==1.0.0
+django-filter==23.3
+pyodbc==5.1.0
+PyJWT==2.8.0
+setuptools==69.0.3
+
+mssql-django==1.4.2
