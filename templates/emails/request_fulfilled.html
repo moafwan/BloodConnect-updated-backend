@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #28a745; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; background: #f9f9f9; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Request Fulfilled</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Dear {{ donor.full_name }},</h2>
+            
+            <p>Thank you for your willingness to help! The blood donation request has been fulfilled by another donor.</p>
+            
+            <div style="background: white; padding: 15px; border-left: 4px solid #28a745; margin: 20px 0;">
+                <p><strong>Request:</strong> {{ request.patient_name }} ({{ request.blood_group }})</p>
+                <p><strong>Fulfilled by:</strong> {{ accepted_donor.full_name }}</p>
+                <p><strong>Hospital:</strong> {{ request.hospital.name }}</p>
+            </div>
+            
+            <p>We truly appreciate your generosity and willingness to save lives. Your commitment to helping others is invaluable.</p>
+            
+            <p>Please continue to be available for future requests. Your contribution can make a difference when someone else needs help.</p>
+            
+            <p>Thank you for your cooperation!</p>
+        </div>
+        
+        <div class="footer">
+            <p>Best regards,<br>Blood Donation Management System</p>
+        </div>
+    </div>
+</body>
+</html>

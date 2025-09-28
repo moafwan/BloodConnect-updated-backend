@@ -7,4 +7,5 @@ urlpatterns = [
     path('requests/<int:request_id>/reject/', views.reject_request, name='reject-request'),
     path('notifications/<int:notification_id>/respond/', views.donor_response, name='donor-response'),
     path('notifications/donor/', views.donor_notifications, name='donor-notifications'),
+    path('test-email/', views.test_email, name='test-email'),
 ]

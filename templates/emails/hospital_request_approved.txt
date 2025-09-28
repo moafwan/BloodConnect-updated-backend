@@ -1,0 +1,30 @@
+BLOOD REQUEST APPROVED
+======================
+
+Dear Hospital Team,
+
+Your blood request has been approved by the blood bank manager and notifications have been sent to potential donors.
+
+REQUEST DETAILS:
+---------------
+Patient Name: {{ request.patient_name }}
+Blood Group: {{ request.blood_group }}
+Required Units: {{ request.units_required }}
+Urgency Level: {{ request.urgency_level|title }}
+Operation ID: {{ request.operation_id }}
+Status: ⏳ Waiting for Donor Response
+
+NEXT STEPS:
+-----------
+* Notifications have been sent to {{ requested_donors_count }} potential donors
+* You will receive another email when a donor accepts the request
+* Monitor the hospital portal for real-time updates
+* Be prepared to contact the donor quickly once they accept
+
+You can track the status in real-time through the hospital portal.
+
+Thank you for using our Blood Donation Management System!
+
+--
+Blood Donation Management System
+Automated Notification - Please do not reply to this message

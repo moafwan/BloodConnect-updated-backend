@@ -73,3 +73,8 @@ class Donor(models.Model):
         if self.has_chronic_disease:
             return False, "Cannot donate due to chronic disease"
         return True, "Eligible to donate"
+    
+    def get_gender_display(self):
+        """Get human-readable gender"""
+        gender_dict = dict(self.GENDER_CHOICES)
+        return gender_dict.get(self.gender, self.gender)

@@ -1,17 +1,23 @@
+BLOOD DONATION REQUEST
+======================
+
 Dear {{ donor.full_name }},
 
 A patient at {{ request.hospital.name }} needs your help!
 
-Patient Details:
+PATIENT DETAILS:
 - Name: {{ request.patient_name }}
 - Blood Group: {{ request.blood_group }}
 - Required Units: {{ request.units_required }}
-- Urgency: {{ request.urgency_level|title }}
+- Urgency Level: {{ request.urgency_level|title }}
+- Hospital: {{ request.hospital.name }}, {{ request.hospital.city }}
+- Medical Condition: {{ request.diagnosis }}
 
-Hospital: {{ request.hospital.name }}
-Location: {{ request.hospital.city }}, {{ request.hospital.state }}
+If you can help, please log in to the blood donation portal and respond to this request.
 
-If you can help, please respond to this request through the blood donation portal.
+Portal URL: {{ portal_url }}
+
+Note: This is an automated notification. Please do not reply to this email.
 
 Thank you for your generosity!
 Blood Donation Management System

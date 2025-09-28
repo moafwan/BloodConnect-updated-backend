@@ -1,0 +1,47 @@
+BLOOD REQUEST FULFILLED - DONOR FOUND
+======================================
+
+Dear Hospital Team,
+
+Great news! A donor has accepted your blood request. Here are the details:
+
+REQUEST DETAILS:
+---------------
+Patient Name: {{ request.patient_name }}
+Blood Group: {{ request.blood_group }}
+Required Units: {{ request.units_required }}
+Urgency Level: {{ request.urgency_level|title }}
+Operation ID: {{ request.operation_id }}
+Status: ✅ Completed
+
+DONOR INFORMATION:
+-----------------
+Full Name: {{ donor.full_name }}
+Blood Group: {{ donor.blood_group }}
+Age: {{ donor.age }} years
+Gender: {{ donor.get_gender_display }}
+
+CONTACT INFORMATION:
+-------------------
+Phone Number: {{ donor.user.phone_number }}
+Email: {{ donor.user.email }}
+Emergency Contact: {{ donor.emergency_contact }}
+
+Address:
+{{ donor.address }}
+{{ donor.city }}, {{ donor.state }}, {{ donor.country }} - {{ donor.pincode }}
+
+IMPORTANT NOTES:
+----------------
+* Please contact the donor within 24 hours to schedule the donation
+* Verify the donor's eligibility upon arrival at the hospital
+* Ensure proper documentation and consent forms are completed
+* The donor has been notified about hospital procedures
+
+You can view the complete donor profile in the hospital portal for additional medical information.
+
+Thank you for using our Blood Donation Management System!
+
+--
+Blood Donation Management System
+Automated Notification - Please do not reply to this message

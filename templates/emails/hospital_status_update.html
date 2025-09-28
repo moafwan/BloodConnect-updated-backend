@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .header { background: #007bff; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .content { padding: 25px; background: #f9f9f9; border-radius: 0 0 8px 8px; }
+        .status-completed { color: #28a745; font-weight: bold; font-size: 1.1em; }
+        .donor-info { background: #e8f5e8; padding: 15px; border-left: 4px solid #28a745; margin: 20px 0; }
+        .contact-details { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; border-top: 1px solid #ddd; margin-top: 20px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+        .info-item { margin: 5px 0; }
+        .label { font-weight: bold; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Blood Request Fulfilled - Donor Found!</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Dear Hospital Team,</h2>
+            
+            <p>Great news! A donor has accepted your blood request. Here are the details:</p>
+            
+            <div style="background: white; padding: 20px; border: 2px solid #007bff; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #007bff; margin-top: 0;">📋 Request Details</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Patient Name:</span> {{ request.patient_name }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Blood Group:</span> {{ request.blood_group }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Required Units:</span> {{ request.units_required }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Urgency Level:</span> {{ request.urgency_level|title }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Operation ID:</span> {{ request.operation_id }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Status:</span> 
+                        <span class="status-completed">✅ Completed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donor-info">
+                <h3 style="color: #28a745; margin-top: 0;">🩸 Donor Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Full Name:</span> {{ donor.full_name }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Blood Group:</span> {{ donor.blood_group }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Age:</span> {{ donor.age }} years
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Gender:</span> {{ donor.get_gender_display }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <h3 style="color: #ffc107; margin-top: 0;">📞 Contact Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Phone Number:</span> {{ donor.user.phone_number }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Email:</span> {{ donor.user.email }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Emergency Contact:</span> {{ donor.emergency_contact }}
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="label">📍 Address:</span><br>
+                    {{ donor.address }},<br>
+                    {{ donor.city }}, {{ donor.state }}, {{ donor.country }} - {{ donor.pincode }}
+                </div>
+            </div>
+
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <h4 style="margin-top: 0; color: #1976d2;">💡 Important Notes:</h4>
+                <ul style="margin-bottom: 0;">
+                    <li>Please contact the donor within 24 hours to schedule the donation</li>
+                    <li>Verify the donor's eligibility upon arrival at the hospital</li>
+                    <li>Ensure proper documentation and consent forms are completed</li>
+                    <li>The donor has been notified about hospital procedures</li>
+                </ul>
+            </div>
+
+            <p>You can view the complete donor profile in the hospital portal for additional medical information.</p>
+            
+            <p style="text-align: center; margin: 25px 0;">
+                <strong>Thank you for using our Blood Donation Management System!</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Blood Donation Management System | Automated Notification</p>
+            <p>This is an automated email. Please do not reply to this message.</p>
+        </div>
+    </div>
+</body>
+</html>

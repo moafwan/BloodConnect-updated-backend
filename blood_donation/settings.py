@@ -70,6 +70,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'logs.middleware.LoggingMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -79,7 +80,9 @@ ROOT_URLCONF = 'blood_donation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',  # This line is important!
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -189,17 +192,35 @@ CORS_ALLOW_CREDENTIALS = True
 
 AUTH_USER_MODEL = 'accounts.User'
 
-# Email configuration
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER', 'noreply@blooddonation.com')
+REPLY_TO_EMAIL = os.getenv('REPLY_TO_EMAIL', 'support@blooddonation.com')
+
+# Frontend URL for links in emails
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:3000')
 
 # For development - console email backend
 if DEBUG and not EMAIL_HOST_USER:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    print("Using console email backend. Emails will be printed to console.")
+
+# # Email configuration
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+# EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+
+# # For development - console email backend
+# if DEBUG and not EMAIL_HOST_USER:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Logging configuration
 # Simplified logging configuration
@@ -228,19 +249,25 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
         },
+        'db': {   # ✅ NEW: Database log handler
+            'level': 'INFO',
+            'class': 'logs.handlers.DatabaseLogHandler',
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['file', 'console', 'db'],  # ✅ added db here
             'level': 'INFO',
             'propagate': True,
         },
         'blood_donation': {
-            'handlers': ['file', 'console'],
+            'handlers': ['file', 'console', 'db'],  # ✅ added db here
             'level': 'INFO',
             'propagate': True,
         },
     },
 }
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

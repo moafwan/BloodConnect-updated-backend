@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .header { background: #17a2b8; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .content { padding: 25px; background: #f9f9f9; border-radius: 0 0 8px 8px; }
+        .status-approved { color: #17a2b8; font-weight: bold; font-size: 1.1em; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+        .info-item { margin: 5px 0; }
+        .label { font-weight: bold; color: #555; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; border-top: 1px solid #ddd; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Blood Request Approved</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Dear Hospital Team,</h2>
+            
+            <p>Your blood request has been approved by the blood bank manager and notifications have been sent to potential donors.</p>
+            
+            <div style="background: white; padding: 20px; border: 2px solid #17a2b8; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #17a2b8; margin-top: 0;">📋 Request Details</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Patient Name:</span> {{ request.patient_name }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Blood Group:</span> {{ request.blood_group }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Required Units:</span> {{ request.units_required }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Urgency Level:</span> {{ request.urgency_level|title }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Operation ID:</span> {{ request.operation_id }}
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Status:</span> 
+                        <span class="status-approved">⏳ Waiting for Donor Response</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <h4 style="margin-top: 0; color: #1976d2;">📢 Next Steps:</h4>
+                <ul style="margin-bottom: 0;">
+                    <li>Notifications have been sent to {{ requested_donors_count }} potential donors</li>
+                    <li>You will receive another email when a donor accepts the request</li>
+                    <li>Monitor the hospital portal for real-time updates</li>
+                    <li>Be prepared to contact the donor quickly once they accept</li>
+                </ul>
+            </div>
+
+            <p>You can track the status in real-time through the hospital portal.</p>
+            
+            <p style="text-align: center; margin: 25px 0;">
+                <strong>Thank you for using our Blood Donation Management System!</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Blood Donation Management System | Automated Notification</p>
+            <p>This is an automated email. Please do not reply to this message.</p>
+        </div>
+    </div>
+</body>
+</html>
