@@ -1,0 +1,66 @@
+Here are the specific questions the chatbot can answer in demo mode:
+
+## 🩸 **Blood Donation Eligibility**
+- "What are the eligibility requirements to donate blood?"
+- "What age do I need to be to donate blood?"
+- "How much do I need to weigh to donate blood?"
+- "What health conditions prevent me from donating?"
+- "Can I donate if I have a cold?"
+- "What medications affect blood donation?"
+
+## 🔄 **Donation Process**
+- "How does the blood donation process work?"
+- "What happens during blood donation?"
+- "How long does blood donation take?"
+- "What should I expect when I donate?"
+- "What are the steps for donating blood?"
+
+## 💪 **Health Benefits**
+- "What are the health benefits of donating blood?"
+- "Is blood donation good for my health?"
+- "Why should I donate blood?"
+- "What are the benefits for donors?"
+
+## 🩺 **Safety & Hygiene**
+- "Is blood donation safe?"
+- "Do you use sterile equipment?"
+- "Are the needles clean?"
+- "What safety measures are in place?"
+- "Is the process hygienic?"
+
+## ⏱️ **Frequency & Timing**
+- "How often can I donate blood?"
+- "How long do I have to wait between donations?"
+- "How many times per year can I donate?"
+- "What's the waiting period between donations?"
+
+## 💉 **Pain & Comfort**
+- "Does blood donation hurt?"
+- "How much does the needle hurt?"
+- "Is it painful to donate blood?"
+- "What does it feel like?"
+
+## 🅰️ **Blood Types**
+- "What blood types are needed?"
+- "Which blood type is most needed?"
+- "What's the universal donor blood type?"
+- "Does my blood type matter?"
+
+## 🏥 **After Donation**
+- "What should I do after donating blood?"
+- "How long should I rest after donation?"
+- "What foods should I eat after donating?"
+- "When can I exercise after donation?"
+
+## 😊 **First-Time Donors**
+- "I'm nervous about my first donation"
+- "What should first-time donors know?"
+- "I'm scared to donate for the first time"
+- "Any tips for first-time donors?"
+
+## ⏰ **Time Commitment**
+- "How much time does donation take?"
+- "How long is the entire process?"
+- "Is it a quick process?"
+
+The chatbot provides comprehensive, accurate information about all aspects of blood donation using its pre-programmed knowledge base! 🩸🤖

@@ -11,12 +11,9 @@ from .serializers import (
     UserRegistrationSerializer, HospitalRegistrationSerializer,
     UserLoginSerializer, UserProfileSerializer
 )
-from donors.models import Donor
-import logging
-
-
 
 logger = logging.getLogger(__name__)
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def donor_registration(request):
@@ -38,12 +35,12 @@ def donor_registration(request):
         if user_serializer.is_valid():
             user = user_serializer.save()
             
-            # Create donor profile with the user instance, not just ID
+            # LAZY IMPORTS to avoid circular dependency
             from donors.models import Donor
             from donors.serializers import DonorRegistrationSerializer
             
             donor_data = {
-                'user': user.id,  # Make sure this is the user ID
+                'user': user.id,
                 'full_name': data.get('full_name', ''),
                 'date_of_birth': data.get('date_of_birth'),
                 'gender': data.get('gender'),
@@ -93,6 +90,7 @@ def donor_registration(request):
             'details': str(e)
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def hospital_registration(request):
@@ -103,7 +101,9 @@ def hospital_registration(request):
             logger.info(f"New hospital registered: {hospital.name}")
             return Response({
                 'message': 'Hospital registration submitted for verification',
-                'hospital_id': hospital.id
+                'hospital_id': hospital.id,
+                'staff_username': hospital.user.username,  # if you have access to it
+                'staff_email': hospital.user.email
             }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:

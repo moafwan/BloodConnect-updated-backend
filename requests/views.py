@@ -174,7 +174,7 @@ def donor_notifications(request):
         if request.user.user_type != 'donor':
             return Response({'error': 'Permission denied'}, status=status.HTTP_403_FORBIDDEN)
         
-        # Get donor profile
+        # LAZY IMPORT to avoid circular dependency
         from donors.models import Donor
         donor = Donor.objects.get(user=request.user)
         

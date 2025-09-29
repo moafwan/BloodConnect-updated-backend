@@ -757,3 +757,196 @@ WARNING 2025-09-28 16:45:10,126 basehttp "POST /api/auth/login/ HTTP/1.1" 401 18
 INFO 2025-09-28 16:49:41,369 basehttp "POST /api/auth/login/ HTTP/1.1" 200 535
 WARNING 2025-09-28 16:49:54,490 log Unauthorized: /api/auth/login/
 WARNING 2025-09-28 16:49:54,491 basehttp "POST /api/auth/login/ HTTP/1.1" 401 183
+INFO 2025-09-29 14:32:06,037 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 14:44:21,973 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 14:45:09,058 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 14:46:37,473 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 14:47:22,854 log Unauthorized: /api/donors/donors/
+WARNING 2025-09-29 14:47:22,855 basehttp "GET //api/donors/donors/ HTTP/1.1" 401 172
+INFO 2025-09-29 14:47:34,294 basehttp "POST //api/auth/login/ HTTP/1.1" 200 529
+WARNING 2025-09-29 14:47:49,203 log Unauthorized: /api/auth/profile/
+WARNING 2025-09-29 14:47:49,203 basehttp "GET //api/auth/profile/ HTTP/1.1" 401 172
+INFO 2025-09-29 14:48:00,939 basehttp "POST //api/auth/login/ HTTP/1.1" 200 537
+INFO 2025-09-29 14:48:28,171 basehttp "GET //api/auth/profile/ HTTP/1.1" 200 180
+INFO 2025-09-29 20:28:11,709 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:03,421 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:04,330 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:06,088 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:06,912 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:09,837 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:10,676 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:12,293 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:13,253 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:47,131 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:48,004 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:49,754 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:50,655 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:52,418 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:53,251 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 20:30:55,014 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-29 20:30:55,833 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 21:13:50,074 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 21:14:03,168 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-29 21:14:03,177 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 250
+INFO 2025-09-29 22:29:57,440 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 22:30:20,528 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:33:31,066 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:35:12,158 basehttp "OPTIONS /api/login/ HTTP/1.1" 200 0
+WARNING 2025-09-29 23:35:12,175 log Not Found: /api/login/
+WARNING 2025-09-29 23:35:12,176 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+WARNING 2025-09-29 23:35:18,568 log Not Found: /api/login/
+WARNING 2025-09-29 23:35:18,568 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+INFO 2025-09-29 23:37:06,614 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:37:07,464 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:37:09,204 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:37:09,987 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 23:37:13,717 log Not Found: /api/login/
+WARNING 2025-09-29 23:37:13,718 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+WARNING 2025-09-29 23:37:27,659 log Not Found: /api/login/
+WARNING 2025-09-29 23:37:27,660 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+WARNING 2025-09-29 23:39:53,861 log Not Found: /api/login/
+WARNING 2025-09-29 23:39:53,861 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+WARNING 2025-09-29 23:41:40,169 log Not Found: /api/login/
+WARNING 2025-09-29 23:41:40,170 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+WARNING 2025-09-29 23:41:52,196 log Not Found: /api/login/
+WARNING 2025-09-29 23:41:52,197 basehttp "POST /api/login/ HTTP/1.1" 404 3002
+INFO 2025-09-29 23:42:46,569 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:42:47,451 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:42:49,134 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:42:49,972 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:43:15,836 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:43:16,734 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:43:18,413 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:43:19,193 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:43:20,855 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:43:21,652 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:43:26,590 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:43:27,411 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:43:31,277 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:43:32,094 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:43:38,124 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:43:39,046 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:54:31,313 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\requests\urls.py changed, reloading.
+INFO 2025-09-29 23:54:32,145 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:54:56,793 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\urls.py changed, reloading.
+INFO 2025-09-29 23:54:57,606 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:55:14,499 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\urls.py changed, reloading.
+INFO 2025-09-29 23:55:15,300 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:57:29,040 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:57:29,830 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:57:34,833 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:57:35,639 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:57:37,370 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:57:38,165 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:57:43,161 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\blood_donation\settings.py changed, reloading.
+INFO 2025-09-29 23:57:48,691 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 23:58:22,582 basehttp "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-29 23:58:23,070 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-29 23:58:23,101 basehttp "OPTIONS /api/requests/notifications/donor/ HTTP/1.1" 200 0
+INFO 2025-09-29 23:58:23,160 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 1453
+INFO 2025-09-29 23:58:41,460 basehttp "OPTIONS /api/donors/donor/profile/ HTTP/1.1" 200 0
+INFO 2025-09-29 23:58:41,468 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-29 23:58:50,767 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 1453
+INFO 2025-09-29 23:58:52,750 basehttp "OPTIONS /api/requests/notifications/5/respond/ HTTP/1.1" 200 0
+INFO 2025-09-29 23:58:58,446 basehttp "POST /api/requests/notifications/5/respond/ HTTP/1.1" 200 100
+INFO 2025-09-29 23:59:02,509 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-29 23:59:14,228 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 740
+INFO 2025-09-29 23:59:15,806 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-29 23:59:20,429 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 740
+INFO 2025-09-30 00:00:21,373 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 00:00:25,368 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 740
+INFO 2025-09-30 00:01:11,721 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\urls.py changed, reloading.
+INFO 2025-09-30 00:01:12,484 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:02:29,295 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:02:30,156 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:02:32,909 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:02:33,738 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:02:35,450 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:02:36,368 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:02:38,065 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:02:39,082 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:02:51,847 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:02:52,657 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:02:56,184 basehttp "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:02:56,210 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 163
+INFO 2025-09-30 00:02:56,261 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 740
+INFO 2025-09-30 00:02:58,914 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 740
+INFO 2025-09-30 00:02:59,935 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 00:03:02,676 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 740
+INFO 2025-09-30 00:03:03,688 basehttp "OPTIONS /api/requests/notifications/6/respond/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:03:08,595 basehttp "POST /api/requests/notifications/6/respond/ HTTP/1.1" 200 99
+INFO 2025-09-30 00:06:59,214 basehttp "OPTIONS /api/auth/register/donor/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:06:59,827 basehttp "POST /api/auth/register/donor/ HTTP/1.1" 201 115
+INFO 2025-09-30 00:07:08,114 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 00:07:08,181 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:07:09,624 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 641
+INFO 2025-09-30 00:07:12,657 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:08:11,750 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 150
+INFO 2025-09-30 00:08:11,781 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:08:29,077 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 00:08:29,121 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:08:30,502 basehttp "OPTIONS /api/donors/donor/donation-history/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:08:30,531 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 850
+INFO 2025-09-30 00:13:55,277 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 163
+INFO 2025-09-30 00:14:18,948 basehttp "POST /api/auth/login/ HTTP/1.1" 200 537
+INFO 2025-09-30 00:14:22,335 basehttp "OPTIONS /api/hospitals/blood-requests/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:14:22,391 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 4876
+INFO 2025-09-30 00:14:29,213 basehttp "OPTIONS /api/hospitals/profile/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:14:29,221 basehttp "GET /api/hospitals/profile/ HTTP/1.1" 200 299
+INFO 2025-09-30 00:14:57,581 basehttp "OPTIONS /api/hospitals/blood-requests/create/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:14:57,619 basehttp "POST /api/hospitals/blood-requests/create/ HTTP/1.1" 201 93
+INFO 2025-09-30 00:15:00,698 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 5307
+INFO 2025-09-30 00:19:31,986 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 00:19:32,014 basehttp "OPTIONS /api/requests/pending/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:19:32,072 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 2391
+INFO 2025-09-30 00:19:34,263 basehttp "OPTIONS /api/requests/3/approve/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:19:38,633 basehttp "POST /api/requests/3/approve/ HTTP/1.1" 200 118
+INFO 2025-09-30 00:19:43,882 basehttp "OPTIONS /api/requests/11/approve/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:19:48,378 basehttp "POST /api/requests/11/approve/ HTTP/1.1" 200 119
+INFO 2025-09-30 00:20:10,595 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 1473
+INFO 2025-09-30 00:20:36,308 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 1473
+INFO 2025-09-30 00:20:38,118 basehttp "OPTIONS /api/requests/4/reject/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:20:42,500 basehttp "POST /api/requests/4/reject/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:26:40,232 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 00:26:40,281 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 998
+INFO 2025-09-30 00:26:54,113 basehttp "OPTIONS /api/requests/6/approve/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:26:58,533 basehttp "POST /api/requests/6/approve/ HTTP/1.1" 200 118
+INFO 2025-09-30 00:27:00,020 basehttp "OPTIONS /api/requests/8/reject/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:27:04,319 basehttp "POST /api/requests/8/reject/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:27:10,141 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:28:29,721 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 178
+INFO 2025-09-30 00:28:42,519 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 00:28:42,560 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:28:44,162 basehttp "OPTIONS /api/donors/ HTTP/1.1" 200 0
+INFO 2025-09-30 00:28:44,179 basehttp "GET /api/donors/ HTTP/1.1" 200 796
+INFO 2025-09-30 00:29:05,769 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:29:05,777 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:29:08,433 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:29:09,528 basehttp "GET /api/donors/ HTTP/1.1" 200 796
+INFO 2025-09-30 00:30:26,270 basehttp "GET /api/donors/ HTTP/1.1" 200 796
+INFO 2025-09-30 00:32:27,135 basehttp "GET /api/donors/ HTTP/1.1" 200 796
+INFO 2025-09-30 00:38:50,435 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:38:51,297 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:38:54,148 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:38:54,964 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:38:58,834 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:38:59,614 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:39:26,672 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\hospitals\views.py changed, reloading.
+INFO 2025-09-30 00:39:27,491 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:39:30,312 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\hospitals\views.py changed, reloading.
+INFO 2025-09-30 00:39:31,102 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:42:48,258 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 00:42:48,300 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:42:52,041 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 00:43:54,285 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 178
+INFO 2025-09-30 00:46:39,167 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\hospitals\views.py changed, reloading.
+INFO 2025-09-30 00:46:40,097 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:46:48,546 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\donors\views.py changed, reloading.
+INFO 2025-09-30 00:46:49,472 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 00:51:16,916 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 178
+INFO 2025-09-30 00:52:17,575 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 178
+INFO 2025-09-30 00:56:59,398 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 00:56:59,436 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 00:57:00,953 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 00:57:01,778 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 850
+INFO 2025-09-30 00:57:05,491 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30

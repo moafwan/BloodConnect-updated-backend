@@ -1,7 +1,7 @@
+from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-from rest_framework import status
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Donor
 from .serializers import DonorListSerializer, DonorDetailSerializer
@@ -48,3 +48,68 @@ def donor_detail(request, donor_id):
     except Exception as e:
         logger.error(f"Donor detail error: {str(e)}")
         return Response({'error': 'Failed to fetch donor details'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET', 'PUT'])
+@permission_classes([IsAuthenticated])
+def donor_profile(request):
+    """Allow donors to view and update their own profile"""
+    try:
+        donor = Donor.objects.get(user=request.user)
+        
+        if request.method == 'GET':
+            serializer = DonorDetailSerializer(donor)
+            return Response(serializer.data)
+            
+        elif request.method == 'PUT':
+            # Allow updating specific fields
+            allowed_fields = ['is_available', 'phone_number', 'address', 'city', 'state', 'emergency_contact']
+            update_data = {k: v for k, v in request.data.items() if k in allowed_fields}
+            
+            serializer = DonorDetailSerializer(donor, data=update_data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Donor.DoesNotExist:
+        return Response({'error': 'Donor profile not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.error(f"Donor profile error: {str(e)}")
+        return Response({'error': 'Failed to fetch donor profile'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def donation_history(request):
+    """Get donation history for authenticated donor"""
+    try:
+        # Check if user is a donor
+        if request.user.user_type != 'donor':
+            return Response({'error': 'Permission denied'}, status=status.HTTP_403_FORBIDDEN)
+        
+        # Get donor profile
+        donor = Donor.objects.get(user=request.user)
+        
+        # Get donation records for this donor
+        from requests.models import DonationRecord
+        from requests.serializers import DonationRecordSerializer
+        
+        donations = DonationRecord.objects.filter(donor=donor).select_related(
+            'blood_request', 
+            'blood_request__hospital'
+        ).order_by('-donation_date')
+        
+        serializer = DonationRecordSerializer(donations, many=True)
+        
+        return Response({
+            'count': donations.count(),
+            'donations': serializer.data
+        })
+        
+    except Donor.DoesNotExist:
+        return Response({'error': 'Donor profile not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.error(f"Donation history error: {str(e)}")
+        return Response({'error': 'Failed to fetch donation history'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    

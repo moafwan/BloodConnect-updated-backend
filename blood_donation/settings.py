@@ -184,6 +184,15 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
+
+# Ensure these are in settings.py
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173/"
+# ]
+
+#CORS_ALLOW_CREDENTIALS = True
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -203,7 +212,7 @@ DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER', 'noreply@blooddonation.com')
 REPLY_TO_EMAIL = os.getenv('REPLY_TO_EMAIL', 'support@blooddonation.com')
 
 # Frontend URL for links in emails
-FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:3000')
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173/')
 
 # For development - console email backend
 if DEBUG and not EMAIL_HOST_USER:
