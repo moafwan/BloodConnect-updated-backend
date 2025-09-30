@@ -18,7 +18,7 @@ def create_blood_request(request):
         if request.user.user_type != 'hospital_staff':
             return Response({'error': 'Permission denied'}, status=status.HTTP_403_FORBIDDEN)
         
-        # ENHANCED: Check if hospital staff and hospital are active
+        # Check if hospital staff and hospital are active
         hospital_staff = HospitalStaff.objects.get(user=request.user)
         if not hospital_staff.hospital.is_active:
             return Response({'error': 'Hospital account is not active'}, status=status.HTTP_403_FORBIDDEN)
@@ -30,32 +30,18 @@ def create_blood_request(request):
         
         serializer = BloodRequestSerializer(data=data)
         if serializer.is_valid():
+            # Create the blood request with 'pending' status (default)
             blood_request = serializer.save()
             
-            # Find matching donors
-            donors = Donor.objects.filter(
-                blood_group=data['blood_group'],
-                is_verified=True,
-                is_available=True
-            )
+            # 🚨 REMOVED: Don't create notifications or send emails here
+            # 🚨 Notifications should only be sent after blood bank manager approval
             
-            # Create notifications for donors
-            notifications = []
-            for donor in donors:
-                notification = DonorNotification(
-                    blood_request=blood_request,
-                    donor=donor,
-                    status='pending'
-                )
-                notifications.append(notification)
+            logger.info(f"Blood request created: {blood_request.id} by hospital {hospital.name} - Awaiting approval")
             
-            DonorNotification.objects.bulk_create(notifications)
-            
-            logger.info(f"Blood request created: {blood_request.id} by hospital {hospital.name}")
             return Response({
-                'message': 'Blood request submitted for verification',
+                'message': 'Blood request submitted for verification. Donors will be notified once approved.',
                 'request_id': blood_request.id,
-                'notifications_sent': len(notifications)
+                'status': 'pending_approval'
             }, status=status.HTTP_201_CREATED)
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -63,7 +49,8 @@ def create_blood_request(request):
         return Response({'error': 'Hospital staff not found'}, status=status.HTTP_404_NOT_FOUND)
     except Exception as e:
         logger.error(f"Blood request creation error: {str(e)}")
-        return Response({'error': 'Failed to create blood request'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)  
+        return Response({'error': 'Failed to create blood request'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
     
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -85,7 +72,8 @@ def hospital_requests(request):
     except Exception as e:
         logger.error(f"Hospital requests fetch error: {str(e)}")
         return Response({'error': 'Failed to fetch requests'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def hospital_profile(request):
@@ -116,4 +104,3 @@ def hospital_profile(request):
     except Exception as e:
         logger.error(f"Hospital profile error: {str(e)}")
         return Response({'error': 'Failed to fetch hospital profile'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    

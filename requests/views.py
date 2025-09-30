@@ -27,42 +27,7 @@ def pending_requests(request):
         logger.error(f"Pending requests fetch error: {str(e)}")
         return Response({'error': 'Failed to fetch pending requests'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def approve_request(request, request_id):
-    try:
-        if request.user.user_type != 'blood_bank_manager':
-            return Response({'error': 'Permission denied'}, status=status.HTTP_403_FORBIDDEN)
-        
-        blood_request = BloodRequest.objects.get(id=request_id)
-        blood_request.status = 'approved'
-        blood_request.approved_by = request.user
-        blood_request.save()
-        
-        # Send notifications to donors
-        notifications = DonorNotification.objects.filter(blood_request=blood_request)
-        email_count = 0
-        
-        for notification in notifications:
-            if send_donation_request_email(notification):
-                email_count += 1
-        
-        # ✅ FIXED: Send APPROVAL email, not COMPLETED email
-        send_hospital_status_email(blood_request, 'approved')  # No donor parameter
-        
-        logger.info(f"Blood request approved: {request_id} by {request.user.username}")
-        return Response({
-            'message': 'Request approved and notifications sent to donors',
-            'request_id': blood_request.id,
-            'new_status': 'approved',
-            'emails_sent': email_count
-        })
-    except BloodRequest.DoesNotExist:
-        return Response({'error': 'Request not found'}, status=status.HTTP_404_NOT_FOUND)
-    except Exception as e:
-        logger.error(f"Request approval error: {str(e)}")
-        return Response({'error': 'Failed to approve request'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+  
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def reject_request(request, request_id):
@@ -167,6 +132,70 @@ def notify_other_donors(blood_request, accepted_donor):
     except Exception as e:
         logger.error(f"Other donors notification error: {str(e)}")
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def approve_request(request, request_id):
+    try:
+        if request.user.user_type != 'blood_bank_manager':
+            return Response({'error': 'Permission denied'}, status=status.HTTP_403_FORBIDDEN)
+        
+        blood_request = BloodRequest.objects.get(id=request_id)
+        blood_request.status = 'approved'
+        blood_request.approved_by = request.user
+        blood_request.save()
+        
+        # ✅ ADDED: Find matching donors and send notifications ONLY AFTER approval
+        from donors.models import Donor
+        donors = Donor.objects.filter(
+            blood_group=blood_request.blood_group,
+            is_verified=True,
+            is_available=True
+        )
+        
+        # Optional: Prioritize local donors
+        local_donors = donors.filter(city__icontains=blood_request.hospital.city)
+        other_donors = donors.exclude(city__icontains=blood_request.hospital.city)
+        
+        # Create notifications for donors
+        notifications = []
+        email_count = 0
+        
+        for donor in donors:
+            notification = DonorNotification(
+                blood_request=blood_request,
+                donor=donor,
+                status='pending'
+            )
+            notifications.append(notification)
+            
+            # Send email notification
+            if send_donation_request_email(notification):
+                email_count += 1
+        
+        # Bulk create notifications
+        DonorNotification.objects.bulk_create(notifications)
+        
+        # Send approval email to hospital
+        send_hospital_status_email(blood_request, 'approved')
+        
+        logger.info(f"Blood request approved: {request_id} by {request.user.username}. Notifications sent to {len(notifications)} donors.")
+        
+        return Response({
+            'message': 'Request approved and notifications sent to donors',
+            'request_id': blood_request.id,
+            'new_status': 'approved',
+            'notifications_sent': len(notifications),
+            'emails_sent': email_count,
+            'local_donors': local_donors.count(),
+            'other_donors': other_donors.count()
+        })
+    except BloodRequest.DoesNotExist:
+        return Response({'error': 'Request not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.error(f"Request approval error: {str(e)}")
+        return Response({'error': 'Failed to approve request'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def donor_notifications(request):
@@ -178,9 +207,11 @@ def donor_notifications(request):
         from donors.models import Donor
         donor = Donor.objects.get(user=request.user)
         
+        # ✅ ONLY show notifications for APPROVED requests
         notifications = DonorNotification.objects.filter(
             donor=donor, 
-            status='pending'
+            status='pending',
+            blood_request__status='approved'  # ADD THIS FILTER
         ).select_related('blood_request', 'blood_request__hospital')
         
         serializer = DonorNotificationSerializer(notifications, many=True)
@@ -193,7 +224,6 @@ def donor_notifications(request):
     except Exception as e:
         logger.error(f"Donor notifications error: {str(e)}")
         return Response({'error': 'Failed to fetch notifications'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def test_email(request):
