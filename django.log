@@ -950,3 +950,190 @@ INFO 2025-09-30 00:56:59,436 basehttp "GET /api/requests/notifications/donor/ HT
 INFO 2025-09-30 00:57:00,953 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
 INFO 2025-09-30 00:57:01,778 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 850
 INFO 2025-09-30 00:57:05,491 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:41:21,341 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 09:42:20,766 basehttp "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:42:21,545 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 09:42:21,588 basehttp "OPTIONS /api/donors/donor/profile/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:42:21,634 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 09:45:49,362 basehttp "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:45:49,508 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 163
+INFO 2025-09-30 09:46:05,527 basehttp "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:46:06,272 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 09:46:06,306 basehttp "OPTIONS /api/requests/notifications/donor/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:46:06,345 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:46:08,234 basehttp "OPTIONS /api/donors/donor/profile/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:46:08,249 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 09:46:09,428 basehttp "OPTIONS /api/donors/donor/donation-history/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:46:09,480 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 850
+INFO 2025-09-30 09:49:48,263 basehttp "GET /api/auth/profile/ HTTP/1.1" 200 163
+INFO 2025-09-30 09:49:48,454 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:51:42,914 basehttp "OPTIONS /api/auth/register/donor/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:51:43,907 basehttp "POST /api/auth/register/donor/ HTTP/1.1" 201 115
+INFO 2025-09-30 09:51:56,153 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 09:51:56,223 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:52:00,899 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 638
+INFO 2025-09-30 09:52:06,228 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 26
+INFO 2025-09-30 09:52:07,524 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:52:08,998 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 638
+INFO 2025-09-30 09:52:11,099 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 26
+INFO 2025-09-30 09:52:12,757 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 638
+INFO 2025-09-30 09:52:14,473 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:54:56,438 basehttp "POST /api/auth/register/donor/ HTTP/1.1" 201 116
+INFO 2025-09-30 09:55:09,182 basehttp "POST /api/auth/login/ HTTP/1.1" 200 531
+INFO 2025-09-30 09:55:09,267 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:55:29,430 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 639
+INFO 2025-09-30 09:55:30,861 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 26
+INFO 2025-09-30 09:55:31,969 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 09:55:35,394 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 26
+INFO 2025-09-30 09:56:50,720 basehttp "OPTIONS /api/auth/register/hospital/ HTTP/1.1" 200 0
+WARNING 2025-09-30 09:56:50,826 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 09:56:50,838 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 89
+WARNING 2025-09-30 09:57:03,141 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 09:57:03,158 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 89
+WARNING 2025-09-30 09:57:10,145 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 09:57:10,156 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 89
+INFO 2025-09-30 09:57:24,492 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 09:57:24,528 basehttp "OPTIONS /api/requests/pending/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:57:24,549 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 09:57:34,030 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 09:58:27,046 basehttp "POST /api/auth/login/ HTTP/1.1" 200 537
+INFO 2025-09-30 09:58:30,237 basehttp "OPTIONS /api/hospitals/blood-requests/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:58:30,339 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 5297
+INFO 2025-09-30 09:58:31,808 basehttp "OPTIONS /api/hospitals/profile/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:58:31,823 basehttp "GET /api/hospitals/profile/ HTTP/1.1" 200 299
+INFO 2025-09-30 09:59:07,222 basehttp "OPTIONS /api/hospitals/blood-requests/create/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:59:07,286 basehttp "POST /api/hospitals/blood-requests/create/ HTTP/1.1" 201 93
+INFO 2025-09-30 09:59:10,772 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 5732
+INFO 2025-09-30 09:59:29,111 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 09:59:29,181 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 459
+INFO 2025-09-30 09:59:32,677 basehttp "OPTIONS /api/requests/12/approve/ HTTP/1.1" 200 0
+INFO 2025-09-30 09:59:53,673 basehttp "POST /api/requests/12/approve/ HTTP/1.1" 200 119
+INFO 2025-09-30 10:00:14,664 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 10:00:14,755 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 687
+INFO 2025-09-30 10:00:20,086 basehttp "OPTIONS /api/requests/notifications/10/respond/ HTTP/1.1" 200 0
+INFO 2025-09-30 10:00:35,696 basehttp "POST /api/requests/notifications/10/respond/ HTTP/1.1" 200 100
+INFO 2025-09-30 10:00:41,065 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 1047
+INFO 2025-09-30 10:01:10,207 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 10:01:11,078 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 10:01:12,596 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 10:01:13,769 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 1047
+INFO 2025-09-30 10:01:16,064 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 666
+INFO 2025-09-30 10:09:19,775 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 10:09:19,853 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+INFO 2025-09-30 10:09:23,051 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 638
+INFO 2025-09-30 10:09:24,794 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 26
+INFO 2025-09-30 10:09:26,030 basehttp "GET /api/donors/donor/profile/ HTTP/1.1" 200 638
+INFO 2025-09-30 10:09:27,043 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 30
+WARNING 2025-09-30 10:09:46,723 log Unauthorized: /api/auth/login/
+WARNING 2025-09-30 10:09:46,747 basehttp "POST /api/auth/login/ HTTP/1.1" 401 31
+INFO 2025-09-30 10:09:57,842 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 10:09:57,922 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 10:10:16,322 basehttp "POST /api/auth/login/ HTTP/1.1" 200 537
+INFO 2025-09-30 10:10:19,859 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 5731
+INFO 2025-09-30 10:10:48,596 basehttp "POST /api/hospitals/blood-requests/create/ HTTP/1.1" 201 93
+INFO 2025-09-30 10:10:53,762 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 6165
+INFO 2025-09-30 10:11:22,943 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 10:11:23,026 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 458
+INFO 2025-09-30 10:11:24,545 basehttp "OPTIONS /api/requests/13/approve/ HTTP/1.1" 200 0
+INFO 2025-09-30 10:11:44,584 basehttp "POST /api/requests/13/approve/ HTTP/1.1" 200 119
+INFO 2025-09-30 10:12:19,232 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 10:12:19,336 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 686
+INFO 2025-09-30 10:12:21,190 basehttp "OPTIONS /api/requests/notifications/14/respond/ HTTP/1.1" 200 0
+INFO 2025-09-30 10:12:37,633 basehttp "POST /api/requests/notifications/14/respond/ HTTP/1.1" 200 100
+INFO 2025-09-30 10:12:40,936 basehttp "GET /api/donors/donor/donation-history/ HTTP/1.1" 200 1244
+INFO 2025-09-30 10:13:39,583 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 10:13:39,659 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 10:13:45,943 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+WARNING 2025-09-30 10:25:42,452 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 10:25:42,464 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 36
+WARNING 2025-09-30 10:27:46,203 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 10:27:46,215 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 36
+WARNING 2025-09-30 10:31:00,148 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 10:31:00,167 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 54
+ERROR 2025-09-30 10:31:31,844 log Internal Server Error: /api/auth/register/hospital/
+ERROR 2025-09-30 10:31:31,849 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 500 31
+INFO 2025-09-30 10:34:56,239 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-30 10:34:57,088 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 10:35:04,433 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\views.py changed, reloading.
+INFO 2025-09-30 10:35:05,352 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 10:36:22,840 autoreload C:\Users\AYAAN SHAREEF\Documents\Ayaan Shareef\Onyx Health (FSDT)\Project\Vital Wave\private-vital-wave-final\accounts\serializers.py changed, reloading.
+INFO 2025-09-30 10:36:23,958 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-30 10:38:06,447 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 10:38:06,470 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 94
+WARNING 2025-09-30 10:38:18,433 log Bad Request: /api/auth/register/hospital/
+WARNING 2025-09-30 10:38:18,444 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 400 290
+INFO 2025-09-30 10:39:08,041 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 201 78
+INFO 2025-09-30 10:49:21,584 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 201 78
+WARNING 2025-09-30 10:49:39,886 log Unauthorized: /api/auth/login/
+WARNING 2025-09-30 10:49:39,905 basehttp "POST /api/auth/login/ HTTP/1.1" 401 31
+WARNING 2025-09-30 10:50:08,910 log Unauthorized: /api/auth/login/
+WARNING 2025-09-30 10:50:08,929 basehttp "POST /api/auth/login/ HTTP/1.1" 401 31
+WARNING 2025-09-30 10:51:12,450 log Forbidden: /api/auth/login/
+WARNING 2025-09-30 10:51:12,474 basehttp "POST /api/auth/login/ HTTP/1.1" 403 40
+WARNING 2025-09-30 10:51:53,404 log Not Found: /
+WARNING 2025-09-30 10:51:53,414 basehttp "GET / HTTP/1.1" 404 2953
+WARNING 2025-09-30 10:51:53,520 log Not Found: /favicon.ico
+WARNING 2025-09-30 10:51:53,525 basehttp "GET /favicon.ico HTTP/1.1" 404 3004
+INFO 2025-09-30 10:51:59,105 basehttp "GET /admin/ HTTP/1.1" 200 13389
+INFO 2025-09-30 10:51:59,297 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-30 10:51:59,308 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-09-30 10:51:59,310 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-09-30 10:51:59,322 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-30 10:51:59,476 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-30 10:51:59,493 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-30 10:51:59,494 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-09-30 10:51:59,509 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-30 10:51:59,510 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-30 10:51:59,511 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-30 10:52:02,224 basehttp "GET /admin/accounts/hospital/ HTTP/1.1" 200 16098
+INFO 2025-09-30 10:52:02,275 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-30 10:52:02,275 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-30 10:52:02,276 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-30 10:52:02,277 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-30 10:52:02,286 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-30 10:52:02,286 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-30 10:52:02,287 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-30 10:52:02,295 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-30 10:52:02,298 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-30 10:52:02,300 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-30 10:52:02,305 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-30 10:52:02,306 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-30 10:52:02,314 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-30 10:52:02,349 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-30 10:52:20,694 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 20948
+INFO 2025-09-30 10:52:20,730 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-09-30 10:52:20,738 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-30 10:52:20,770 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-30 10:52:27,837 basehttp "GET /admin/accounts/user/12/change/ HTTP/1.1" 200 28829
+INFO 2025-09-30 10:52:27,881 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-09-30 10:52:27,882 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-30 10:52:27,882 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-09-30 10:52:27,883 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-30 10:52:27,884 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-09-30 10:52:27,893 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-30 10:52:27,893 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-09-30 10:52:27,896 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-30 10:52:27,901 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-30 10:52:27,970 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-09-30 10:52:27,971 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-30 10:52:27,971 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-09-30 10:52:32,500 basehttp "POST /admin/accounts/user/12/change/ HTTP/1.1" 302 0
+INFO 2025-09-30 10:52:32,544 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 21160
+INFO 2025-09-30 10:52:32,589 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-30 10:52:37,603 basehttp "POST /api/auth/login/ HTTP/1.1" 200 539
+INFO 2025-09-30 10:59:27,404 basehttp "POST /api/hospitals/blood-requests/create/ HTTP/1.1" 201 93
+INFO 2025-09-30 10:59:46,330 basehttp "POST /api/auth/login/ HTTP/1.1" 200 529
+INFO 2025-09-30 10:59:46,376 basehttp "GET /api/requests/notifications/donor/ HTTP/1.1" 200 664
+INFO 2025-09-30 10:59:49,688 basehttp "OPTIONS /api/requests/notifications/18/respond/ HTTP/1.1" 200 0
+INFO 2025-09-30 11:00:04,791 basehttp "POST /api/requests/notifications/18/respond/ HTTP/1.1" 200 100
+INFO 2025-09-30 11:00:42,395 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 11:00:42,435 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 25
+INFO 2025-09-30 11:01:28,126 basehttp "POST /api/auth/login/ HTTP/1.1" 200 539
+INFO 2025-09-30 11:01:32,612 basehttp "GET /api/hospitals/profile/ HTTP/1.1" 200 264
+INFO 2025-09-30 11:01:34,028 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 436
+INFO 2025-09-30 11:02:10,641 basehttp "POST /api/hospitals/blood-requests/create/ HTTP/1.1" 201 93
+INFO 2025-09-30 11:02:14,195 basehttp "GET /api/hospitals/blood-requests/ HTTP/1.1" 200 849
+INFO 2025-09-30 11:02:31,756 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
+INFO 2025-09-30 11:02:31,840 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 437
+INFO 2025-09-30 11:02:35,126 basehttp "OPTIONS /api/requests/15/approve/ HTTP/1.1" 200 0
+INFO 2025-09-30 11:02:54,686 basehttp "POST /api/requests/15/approve/ HTTP/1.1" 200 119

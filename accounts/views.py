@@ -95,20 +95,41 @@ def donor_registration(request):
 @permission_classes([AllowAny])
 def hospital_registration(request):
     try:
+        print("=== HOSPITAL REGISTRATION REQUEST ===")
+        print("Request data:", request.data)
+        
         serializer = HospitalRegistrationSerializer(data=request.data)
+        print("Serializer created")
+        
         if serializer.is_valid():
+            print("Serializer is valid")
             hospital = serializer.save()
+            print(f"Hospital created: {hospital.name}")
             logger.info(f"New hospital registered: {hospital.name}")
             return Response({
                 'message': 'Hospital registration submitted for verification',
-                'hospital_id': hospital.id,
-                'staff_username': hospital.user.username,  # if you have access to it
-                'staff_email': hospital.user.email
+                'hospital_id': hospital.id
             }, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            print("Serializer errors:", serializer.errors)
+            return Response({
+                'error': 'Validation failed',
+                'details': serializer.errors
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
     except Exception as e:
+        print("=== HOSPITAL REGISTRATION EXCEPTION ===")
+        print("Error type:", type(e).__name__)
+        print("Error message:", str(e))
+        import traceback
+        print("Traceback:", traceback.format_exc())
+        
         logger.error(f"Hospital registration error: {str(e)}")
-        return Response({'error': 'Registration failed'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({
+            'error': 'Registration failed',
+            'debug_info': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])

@@ -29,17 +29,41 @@ class HospitalRegistrationSerializer(serializers.ModelSerializer):
                  'city', 'state', 'country', 'license_number', 'user')
 
     def create(self, validated_data):
-        user_data = validated_data.pop('user')
-        user_data['user_type'] = 'hospital_staff'  # Add user_type here
+        print("=== HOSPITAL SERIALIZER CREATE ===")
+        print("Validated data:", validated_data)
         
-        user_serializer = UserRegistrationSerializer(data=user_data)
-        user_serializer.is_valid(raise_exception=True)
-        user = user_serializer.save()
-        
-        hospital = Hospital.objects.create(**validated_data)
-        HospitalStaff.objects.create(user=user, hospital=hospital, designation='Staff')
-        
-        return hospital
+        try:
+            user_data = validated_data.pop('user')
+            print("User data:", user_data)
+            
+            # Ensure user_type is set to hospital_staff
+            user_data['user_type'] = 'hospital_staff'
+            
+            user_serializer = UserRegistrationSerializer(data=user_data)
+            if user_serializer.is_valid():
+                user = user_serializer.save()
+                print("User created:", user.username)
+            else:
+                print("User serializer errors:", user_serializer.errors)
+                raise serializers.ValidationError(user_serializer.errors)
+            
+            hospital = Hospital.objects.create(**validated_data)
+            print("Hospital created:", hospital.name)
+            
+            # Create HospitalStaff entry
+            HospitalStaff.objects.create(
+                user=user, 
+                hospital=hospital, 
+                designation='Staff',
+                is_primary_contact=True
+            )
+            print("HospitalStaff created")
+            
+            return hospital
+            
+        except Exception as e:
+            print("Error in hospital serializer create:", str(e))
+            raise e
 
 class UserLoginSerializer(serializers.Serializer):
     username = serializers.CharField()
