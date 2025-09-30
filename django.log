@@ -1137,3 +1137,19 @@ INFO 2025-09-30 11:02:31,756 basehttp "POST /api/auth/login/ HTTP/1.1" 200 541
 INFO 2025-09-30 11:02:31,840 basehttp "GET /api/requests/pending/ HTTP/1.1" 200 437
 INFO 2025-09-30 11:02:35,126 basehttp "OPTIONS /api/requests/15/approve/ HTTP/1.1" 200 0
 INFO 2025-09-30 11:02:54,686 basehttp "POST /api/requests/15/approve/ HTTP/1.1" 200 119
+INFO 2025-09-30 11:12:11,045 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 11:14:02,665 autoreload Watching for file changes with StatReloader
+INFO 2025-09-30 11:16:01,565 basehttp "POST /api/auth/register/hospital/ HTTP/1.1" 201 78
+WARNING 2025-09-30 11:16:14,398 log Unauthorized: /api/auth/login/
+WARNING 2025-09-30 11:16:14,417 basehttp "POST /api/auth/login/ HTTP/1.1" 401 31
+INFO 2025-09-30 11:16:37,981 basehttp "GET /admin/ HTTP/1.1" 200 13403
+INFO 2025-09-30 11:16:40,942 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 21482
+INFO 2025-09-30 11:16:40,999 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-30 11:16:46,965 basehttp "GET /admin/accounts/user/14/change/ HTTP/1.1" 200 28782
+INFO 2025-09-30 11:16:47,008 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-30 11:16:52,651 basehttp "POST /admin/accounts/user/14/change/ HTTP/1.1" 302 0
+INFO 2025-09-30 11:16:52,690 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 21681
+INFO 2025-09-30 11:16:52,734 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-09-30 11:17:00,092 log Unauthorized: /api/auth/login/
+WARNING 2025-09-30 11:17:00,097 basehttp "POST /api/auth/login/ HTTP/1.1" 401 31
+INFO 2025-09-30 11:17:10,517 basehttp "POST /api/auth/login/ HTTP/1.1" 200 539
