@@ -10,6 +10,7 @@ class DonorFilter(django_filters.FilterSet):
     
     min_age = django_filters.NumberFilter(method='filter_min_age')
     max_age = django_filters.NumberFilter(method='filter_max_age')
+    eligible_to_donate = django_filters.BooleanFilter(method='filter_eligible_to_donate')
     
     class Meta:
         model = Donor
@@ -26,3 +27,21 @@ class DonorFilter(django_filters.FilterSet):
         from dateutil.relativedelta import relativedelta
         min_birth_date = date.today() - relativedelta(years=value + 1)
         return queryset.filter(date_of_birth__gt=min_birth_date)
+    
+    def filter_eligible_to_donate(self, queryset, name, value):
+        """Filter donors who are currently eligible to donate (including time gap)"""
+        if value:
+            from datetime import date
+            from dateutil.relativedelta import relativedelta
+            
+            # Get donors who passed the 3-month gap or never donated
+            three_months_ago = date.today() - relativedelta(months=3)
+            eligible_donors = []
+            
+            for donor in queryset:
+                can_donate, _ = donor.can_donate()
+                if can_donate:
+                    eligible_donors.append(donor.id)
+            
+            return queryset.filter(id__in=eligible_donors)
+        return queryset

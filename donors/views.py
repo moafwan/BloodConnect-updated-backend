@@ -24,15 +24,25 @@ def donor_list(request):
         donor_filter = DonorFilter(request.GET, queryset=donors)
         filtered_donors = donor_filter.qs
         
-        serializer = DonorListSerializer(filtered_donors, many=True)
+        # Enhance donor data with eligibility info
+        enhanced_donors = []
+        for donor in filtered_donors:
+            can_donate, message = donor.can_donate()
+            donor_data = DonorListSerializer(donor).data
+            donor_data['can_donate_now'] = can_donate
+            donor_data['eligibility_message'] = message
+            donor_data['last_donation_date'] = donor.last_donation_date
+            donor_data['total_donations'] = donor.total_donations
+            enhanced_donors.append(donor_data)
+        
         return Response({
             'count': filtered_donors.count(),
-            'donors': serializer.data
+            'donors': enhanced_donors
         })
     except Exception as e:
         logger.error(f"Donor list error: {str(e)}")
         return Response({'error': 'Failed to fetch donors'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+    
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def donor_detail(request, donor_id):

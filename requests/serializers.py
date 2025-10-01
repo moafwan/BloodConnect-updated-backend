@@ -15,6 +15,10 @@ class DonorNotificationSerializer(serializers.ModelSerializer):
     donor_name = serializers.CharField(source='donor.full_name', read_only=True)
     donor_blood_group = serializers.CharField(source='donor.blood_group', read_only=True)
     donor_contact = serializers.CharField(source='donor.user.phone_number', read_only=True)
+    donor_city = serializers.CharField(source='donor.city', read_only=True)
+    donor_state = serializers.CharField(source='donor.state', read_only=True)
+    hospital_city = serializers.CharField(source='blood_request.hospital.city', read_only=True)
+    hospital_state = serializers.CharField(source='blood_request.hospital.state', read_only=True)
     request_details = BloodRequestSerializer(source='blood_request', read_only=True)
     
     class Meta:

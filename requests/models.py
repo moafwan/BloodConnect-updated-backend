@@ -58,12 +58,29 @@ class DonorNotification(models.Model):
     class Meta:
         unique_together = ('blood_request', 'donor')
 
+# class DonationRecord(models.Model):
+#     blood_request = models.ForeignKey(BloodRequest, on_delete=models.CASCADE)
+#     donor = models.ForeignKey(Donor, on_delete=models.CASCADE)
+#     donation_date = models.DateTimeField(auto_now_add=True)
+#     units_donated = models.IntegerField(default=1)
+#     notes = models.TextField(blank=True)
+    
+#     class Meta:
+#         unique_together = ('blood_request', 'donor')
+
 class DonationRecord(models.Model):
     blood_request = models.ForeignKey(BloodRequest, on_delete=models.CASCADE)
     donor = models.ForeignKey(Donor, on_delete=models.CASCADE)
-    donation_date = models.DateTimeField(auto_now_add=True)
+    donation_date = models.DateTimeField(auto_now_add=True)  # This automatically sets the timestamp
     units_donated = models.IntegerField(default=1)
     notes = models.TextField(blank=True)
     
     class Meta:
         unique_together = ('blood_request', 'donor')
+    
+    def save(self, *args, **kwargs):
+        # Ensure donation_date is set to current time if not provided
+        if not self.donation_date:
+            from django.utils import timezone
+            self.donation_date = timezone.now()
+        super().save(*args, **kwargs)

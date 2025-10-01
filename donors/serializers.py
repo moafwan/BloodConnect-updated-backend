@@ -45,7 +45,19 @@ class DonorDetailSerializer(serializers.ModelSerializer):
     age = serializers.ReadOnlyField()
     email = serializers.CharField(source='user.email', read_only=True)
     phone_number = serializers.CharField(source='user.phone_number', read_only=True)
+    can_donate_now = serializers.SerializerMethodField()
+    next_eligible_date = serializers.SerializerMethodField()
     
     class Meta:
         model = Donor
         fields = '__all__'
+    
+    def get_can_donate_now(self, obj):
+        can_donate, _ = obj.can_donate()
+        return can_donate
+    
+    def get_next_eligible_date(self, obj):
+        if obj.last_donation_date:
+            from dateutil.relativedelta import relativedelta
+            return obj.last_donation_date + relativedelta(months=3)
+        return None
